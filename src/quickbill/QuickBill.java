@@ -7,7 +7,7 @@ package quickbill;
 
 /**
  *
- * @author Rzkan
+ * @author rizkyandre
  */
 public class QuickBill {
 
@@ -15,8 +15,8 @@ public class QuickBill {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here 
-        System.out.println("hello world");
+        // TODO code application logic here
+        
     }
     
 }
