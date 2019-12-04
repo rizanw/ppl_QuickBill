@@ -9,12 +9,12 @@ package quickbill;
  *
  * @author rizkyandre
  */
-public class FormDataBarang extends javax.swing.JPanel {
+public class FormDataTransaksi extends javax.swing.JPanel {
 
     /**
      * Creates new form FormDataBarang
      */
-    public FormDataBarang() {
+    public FormDataTransaksi() {
         initComponents();
     }
 
@@ -38,11 +38,11 @@ public class FormDataBarang extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
 
-        jLabel1.setText("No Id Barang :");
+        jLabel1.setText("No Transaksi :");
 
-        jLabel2.setText("Nama Barang :");
+        jLabel2.setText("Nama Pelanggan :");
 
-        jLabel3.setText("Harga Barang :");
+        jLabel3.setText("Jumlah Nominal :");
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,7 +50,7 @@ public class FormDataBarang extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setText("Jumlah Barang Tersedia : ");
+        jLabel4.setText("Tanggal Transaksi : ");
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,7 +58,7 @@ public class FormDataBarang extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Tambah Barang");
+        jButton1.setText("Tambah Transaksi");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,7 +86,7 @@ public class FormDataBarang extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addGap(0, 280, Short.MAX_VALUE))
+                .addGap(0, 308, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jTextField1)
             .addComponent(jTextField2)

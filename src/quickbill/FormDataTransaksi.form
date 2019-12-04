@@ -23,7 +23,7 @@
                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="280" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="308" max="32767" attributes="0"/>
           </Group>
           <Component id="jPanel1" max="32767" attributes="0"/>
           <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
@@ -60,21 +60,21 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="No Id Barang :"/>
+        <Property name="text" type="java.lang.String" value="No Transaksi :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nama Barang :"/>
+        <Property name="text" type="java.lang.String" value="Nama Pelanggan :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Harga Barang :"/>
+        <Property name="text" type="java.lang.String" value="Jumlah Nominal :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField3">
@@ -84,7 +84,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Jumlah Barang Tersedia : "/>
+        <Property name="text" type="java.lang.String" value="Tanggal Transaksi : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField4">
@@ -116,7 +116,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tambah Barang"/>
+            <Property name="text" type="java.lang.String" value="Tambah Transaksi"/>
           </Properties>
         </Component>
       </SubComponents>

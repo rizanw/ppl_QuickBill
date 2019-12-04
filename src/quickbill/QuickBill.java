@@ -16,7 +16,7 @@ public class QuickBill {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new windowQuickBill().setVisible(true);
+        new WindowQuickBill().setVisible(true);
     }
     
 }
