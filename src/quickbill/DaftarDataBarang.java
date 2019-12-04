@@ -9,14 +9,10 @@ package quickbill;
  *
  * @author rizkyandre
  */
-public class QuickBill {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        new windowQuickBill().setVisible(true);
-    }
+public class DaftarDataBarang {
+    String noIdentitasBarang;
+    String namaBarang;
+    int hargaBarang;
+    int jumlahBarangTersedia;
     
 }
