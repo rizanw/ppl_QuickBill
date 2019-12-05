@@ -16,7 +16,13 @@ public class QuickBill {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new WindowQuickBill().setVisible(true);
+        DBConnection db = new DBConnection();
+        db.createTableBarang();
+        db.createTableKasir();
+        db.createTableTransaksi();
+//        db.insertIntoBarang("345678", "baju baru", 5600, 3);
+        db.printAllBarang();
+        
+//        new WindowQuickBill().setVisible(true);
     }
-    
 }
