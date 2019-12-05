@@ -16,5 +16,17 @@ public class DaftarDataKasir {
     String alamatKasir;
     String emailKasir;
     String kataSandiKasir;
+    DBConnection db = new DBConnection();
     
+    public boolean tambahDataKasir(String noId, String nama, String kontak, String alamat, String email, String kataSandi){
+        boolean status = db.insertIntoKasir(noId, nama, kontak, alamat, email, kataSandi);
+        
+        if (!status) {
+            System.out.println("gagal ditambahkan");
+            return false;
+        }
+
+        new PesanKonfirmasi().penambahanDataKasirDilakukan();
+        return true;
+    }
 }

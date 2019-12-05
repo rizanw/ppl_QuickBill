@@ -5,6 +5,9 @@
  */
 package quickbill;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author rizkyandre
@@ -16,13 +19,21 @@ public class QuickBill {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        LocalDate localDate = LocalDate.now();
+        System.out.println(DateTimeFormatter.ofPattern("yyy/MM/dd").format(localDate));
+        
         DBConnection db = new DBConnection();
         db.createTableBarang();
         db.createTableKasir();
         db.createTableTransaksi();
 //        db.insertIntoBarang("345678", "baju baru", 5600, 3);
+//        db.insertIntoKasir("0987", "test1", "0822", "MIS", "email@email.com", "sandi");
+//        db.insertIntoTransaksi("123456", "nama", 22, java.sql.Date.valueOf(localDate));
+        db.printAllKasir();
         db.printAllBarang();
+        db.printAllTransaksi();
         
-//        new WindowQuickBill().setVisible(true);
+        new WindowQuickBill().setVisible(true);
     }
 }
