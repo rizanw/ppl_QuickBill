@@ -8,3 +8,5 @@ dist/
 nbdist/
 .nb-gradle/
 .DS_Store
+quickbill.db/
+derby.log

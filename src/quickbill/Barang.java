@@ -5,17 +5,19 @@
  */
 package quickbill;
 
+import DataBase.QuickBillData;
+
 /**
  *
  * @author rizkyandre
  */
-public class DaftarDataBarang {
+public class Barang {
 
     String noIdentitasBarang;
     String namaBarang;
     int hargaBarang;
     int jumlahBarangTersedia;
-    DBConnection db = new DBConnection();
+    QuickBillData db = new QuickBillData();
 
     public boolean tambahDataBarang(String NoIdBarang, String namaBarang, int hargaBarang, int jumlahBarangTersedia) {
         boolean status = db.insertIntoBarang(NoIdBarang, namaBarang, hargaBarang, jumlahBarangTersedia);

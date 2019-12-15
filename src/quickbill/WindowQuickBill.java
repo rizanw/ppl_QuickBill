@@ -5,6 +5,8 @@
  */
 package quickbill;
 
+import UserAuthControl.Session;
+import UserAuthControl.WindowLogin;
 import java.awt.FlowLayout;
 
 /**
@@ -18,6 +20,36 @@ public class WindowQuickBill extends javax.swing.JFrame {
      */
     public WindowQuickBill() {
         initComponents();
+        
+//        if("1".equals(role)){
+//            menuCariBarang.setEnabled(true);
+//            menuDaftarBarang.setEnabled(true);
+//            menuTambahDataBarang.setEnabled(true);
+//            menuCariTransaksi.setEnabled(true);
+//            menuDaftarTransaksi.setEnabled(true);
+//            menuTambahTransaksi.setEnabled(true);
+//            menuTambahKasir.setEnabled(true);
+//            menuDaftarKasir.setEnabled(true);
+//        }else if("2".equals(role)){
+//            menuCariBarang.setEnabled(true);
+//            menuDaftarBarang.setEnabled(true);
+//            menuTambahDataBarang.setEnabled(true);
+//            menuCariTransaksi.setEnabled(true);
+//            menuDaftarTransaksi.setEnabled(true);
+//            menuTambahTransaksi.setEnabled(true);
+//            menuTambahKasir.setEnabled(false);
+//            menuDaftarKasir.setEnabled(false);
+//        }else{
+//            menuCariBarang.setEnabled(false);
+//            menuDaftarBarang.setEnabled(false);
+//            menuTambahDataBarang.setEnabled(false);
+//            menuCariTransaksi.setEnabled(false);
+//            menuDaftarTransaksi.setEnabled(false);
+//            menuTambahTransaksi.setEnabled(false);
+//            menuTambahKasir.setEnabled(false);
+//            menuDaftarKasir.setEnabled(false);
+//        }
+        
         mainPanel.setLayout(new FlowLayout());
     }
 
@@ -35,6 +67,7 @@ public class WindowQuickBill extends javax.swing.JFrame {
         jMenuBar = new javax.swing.JMenuBar();
         menuQuickBill = new javax.swing.JMenu();
         menuMainPanel = new javax.swing.JMenuItem();
+        menuLogin = new javax.swing.JMenuItem();
         menuExit = new javax.swing.JMenuItem();
         menuStock = new javax.swing.JMenu();
         menuTambahDataBarang = new javax.swing.JMenuItem();
@@ -81,6 +114,14 @@ public class WindowQuickBill extends javax.swing.JFrame {
             }
         });
         menuQuickBill.add(menuMainPanel);
+
+        menuLogin.setText("Login");
+        menuLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuLoginActionPerformed(evt);
+            }
+        });
+        menuQuickBill.add(menuLogin);
 
         menuExit.setText("Exit");
         menuExit.addActionListener(new java.awt.event.ActionListener() {
@@ -247,6 +288,12 @@ public class WindowQuickBill extends javax.swing.JFrame {
 
     private void menuDaftarKasirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDaftarKasirActionPerformed
         // TODO add your handling code here:
+        mainPanel.removeAll();
+        mainPanel.repaint();
+        mainPanel.revalidate();
+        
+        mainPanel.add(new DaftarKasir());
+        mainPanel.validate();
     }//GEN-LAST:event_menuDaftarKasirActionPerformed
 
     private void menuDaftarBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDaftarBarangActionPerformed
@@ -257,6 +304,11 @@ public class WindowQuickBill extends javax.swing.JFrame {
         // TODO add your handling code here:
         new FormCariBarang().setVisible(true);
     }//GEN-LAST:event_menuCariBarangActionPerformed
+
+    private void menuLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuLoginActionPerformed
+        // TODO add your handling code here:
+        new WindowLogin().setVisible(true);
+    }//GEN-LAST:event_menuLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,6 +356,7 @@ public class WindowQuickBill extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuDaftarKasir;
     private javax.swing.JMenuItem menuDaftarTransaksi;
     private javax.swing.JMenuItem menuExit;
+    private javax.swing.JMenuItem menuLogin;
     private javax.swing.JMenuItem menuMainPanel;
     private javax.swing.JMenu menuQuickBill;
     private javax.swing.JMenu menuStock;

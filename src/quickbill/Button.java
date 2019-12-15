@@ -11,42 +11,32 @@ package quickbill;
  */
 public class Button {
     public void ok(){
-        
     }
     
     public void tambahBarang(){
-        
     }
     
     public void lihatKasir(){
-        
     }
     
     public void perbaruiKasir(){
-        
     }
     
     public void hapusKasir(){
-        
     }
     
     public void menambahDataTransaksi(){
-        
     }
     
     public void hapus(){
-        
     }
     
     public void windowCariDataBarang(){
-        
     }
     
     public void windowCariTransaksi(){
-        
     }
     
     public void cariBarang(){
-        
     }
 }

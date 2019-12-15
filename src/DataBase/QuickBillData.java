@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quickbill;
+package DataBase;
 
 import java.sql.Connection;
 import java.sql.Driver;
@@ -22,7 +22,7 @@ import org.apache.derby.jdbc.EmbeddedDriver;
  *
  * @author rizkyandre
  */
-public class DBConnection {
+public class QuickBillData {
 //    private static final String DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
     private static final String dbURL = "jdbc:derby:quickbill.db;create=true";
     
@@ -31,7 +31,7 @@ public class DBConnection {
     Statement stmt = null;
     ResultSet rs = null;
     
-    public DBConnection(){
+    public QuickBillData(){
         try {
             Driver derbyEmbeddedDriver = new EmbeddedDriver();
             DriverManager.registerDriver(derbyEmbeddedDriver);
@@ -40,7 +40,7 @@ public class DBConnection {
                 System.out.println("Connection Created!");
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -59,7 +59,7 @@ public class DBConnection {
                 stmt.execute(kasir);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -76,7 +76,7 @@ public class DBConnection {
                 stmt.execute(barang);
             }
         }catch(SQLException e){
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, e);
         }
     }
     
@@ -93,7 +93,7 @@ public class DBConnection {
                 stmt.execute(transaksi);
             }
         }catch(SQLException e){
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, e);
         }
     }
     
@@ -117,7 +117,7 @@ public class DBConnection {
                 return false;
             }
         }catch(SQLException e){
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, e);
         }
         
         return false;
@@ -145,7 +145,7 @@ public class DBConnection {
                 return false;
             }
         }catch(SQLException e){
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, e);
         }
         
         return false;
@@ -172,7 +172,7 @@ public class DBConnection {
                 return false;
             }
         }catch(SQLException e){
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, e);
         }
         
         return false;
@@ -191,7 +191,7 @@ public class DBConnection {
                 );
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     public void printAllKasir(){
@@ -209,7 +209,7 @@ public class DBConnection {
                 );
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     public void printAllTransaksi(){
@@ -225,7 +225,7 @@ public class DBConnection {
                 );
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -241,7 +241,7 @@ public class DBConnection {
                 return false;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }

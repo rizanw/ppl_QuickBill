@@ -178,7 +178,7 @@ public class FormDataKasir extends javax.swing.JPanel {
         String emailKasir = fieldEmailKasir.getText();
         String kataSandiKasir = fieldKataSandiKasir.getText();
         
-        new DaftarDataKasir().tambahDataKasir(noIdKasir, namaKasir, kontakKasir, alamatKasir, emailKasir, kataSandiKasir);
+        new Kasir().tambahDataKasir(noIdKasir, namaKasir, kontakKasir, alamatKasir, emailKasir, kataSandiKasir);
 
         fieldNoIdKasir.setText("");
         fieldNamaKasir.setText("");

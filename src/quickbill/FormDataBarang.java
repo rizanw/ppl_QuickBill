@@ -153,7 +153,7 @@ public class FormDataBarang extends javax.swing.JPanel {
         jumlahBarangTersedia = Integer.parseInt(fieldJumlahBarangTersedia.getText());
 //        System.out.printf("Form data barang : %s %s %d %d", NoIdBarang, namaBarang, hargaBarang, jumlahBarangTersedia);
         
-        new DaftarDataBarang().tambahDataBarang(NoIdBarang, namaBarang, hargaBarang, jumlahBarangTersedia);
+        new Barang().tambahDataBarang(NoIdBarang, namaBarang, hargaBarang, jumlahBarangTersedia);
         fieldNoIdBarang.setText("");
         fieldNamaBarang.setText("");
         fieldHargaBarang.setText("");

@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author rzkan
  */
-public class DaftarDataTransaksi {
+public class Transaksi {
     int nomorTransaksi;
     String namaPelanggan;
     int jumlahNominal;
