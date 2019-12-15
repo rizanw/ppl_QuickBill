@@ -5,6 +5,8 @@
  */
 package quickbill;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author rzkan
@@ -28,5 +30,10 @@ public class DaftarDataKasir {
 
         new PesanKonfirmasi().penambahanDataKasirDilakukan();
         return true;
+    }
+    
+    public ResultSet showDataKasir(String noId){
+        ResultSet kasir = db.getDataKasir(noId);
+        return kasir;
     }
 }

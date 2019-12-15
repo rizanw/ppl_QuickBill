@@ -178,6 +178,19 @@ public class DBConnection {
         return false;
     }
     
+    public ResultSet getDataKasir(String NoId){
+        try {
+            String q = "select * from Kasir where NoIdKasir = ?";
+            pstmt = conn.prepareStatement(q);
+            pstmt.setString(1, NoId);
+            rs = pstmt.executeQuery();
+            return rs;
+        } catch (SQLException ex) {
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
     public void printAllBarang(){
         try {
             stmt = conn.createStatement();
@@ -194,6 +207,7 @@ public class DBConnection {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     public void printAllKasir(){
         try {
             stmt = conn.createStatement();

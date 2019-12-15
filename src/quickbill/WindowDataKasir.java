@@ -5,6 +5,11 @@
  */
 package quickbill;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author rzkan
@@ -13,9 +18,38 @@ public class WindowDataKasir extends javax.swing.JFrame {
 
     /**
      * Creates new form WindowDataBarang
+     * @param kasir
      */
-    public WindowDataKasir() {
-        initComponents();
+    public WindowDataKasir(ResultSet kasir) {
+        initComponents();        
+        String noIdKasir;
+        String namaKasir;
+        String kontakKasir;
+        String alamatKasir;
+        String emailKasir;
+        String kataSandiKasir;
+        
+        try {
+            while (kasir.next()) {
+                noIdKasir = kasir.getString(1);
+                namaKasir = kasir.getString(2);
+                kontakKasir = kasir.getString(3);
+                alamatKasir = kasir.getString(4);
+                emailKasir = kasir.getString(5);
+                
+                textNoIdKasir.setText(noIdKasir);
+                textNamaKasir.setText(namaKasir);
+                textKontakKasir.setText(kontakKasir);
+                textAlamatKasir.setText(alamatKasir);
+                textEmailKasir.setText(emailKasir);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(WindowDataKasir.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+    }
+
+    private WindowDataKasir() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -27,103 +61,107 @@ public class WindowDataKasir extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        titleDataKasir = new javax.swing.JLabel();
+        titleNoIdKasir = new javax.swing.JLabel();
+        textNoIdKasir = new javax.swing.JLabel();
+        titleNamaKasir = new javax.swing.JLabel();
+        textNamaKasir = new javax.swing.JLabel();
+        titleKontakKasir = new javax.swing.JLabel();
+        textKontakKasir = new javax.swing.JLabel();
+        titleAlamatKasir = new javax.swing.JLabel();
+        textAlamatKasir = new javax.swing.JLabel();
+        titleEmailKasir = new javax.swing.JLabel();
+        textEmailKasir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Data Kasir");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Data Kasir");
+        titleDataKasir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        titleDataKasir.setText("Data Kasir");
 
-        jLabel2.setText("No Id Kasir                   :");
+        titleNoIdKasir.setText("No Id Kasir                   :");
 
-        jLabel3.setText("Nama Kasir                   :");
+        textNoIdKasir.setText("jLabel6");
 
-        jLabel4.setText("Kontak Kasir                 :");
+        titleNamaKasir.setText("Nama Kasir                   :");
 
-        jLabel5.setText("Alamat Kasir                 :");
+        textNamaKasir.setText("jLabel6");
 
-        jLabel6.setText("jLabel6");
+        titleKontakKasir.setText("Kontak Kasir                 :");
 
-        jLabel7.setText("jLabel6");
+        textKontakKasir.setText("jLabel6");
 
-        jLabel8.setText("jLabel6");
+        titleAlamatKasir.setText("Alamat Kasir                 :");
 
-        jLabel9.setText("jLabel6");
+        textAlamatKasir.setText("jLabel6");
 
-        jLabel10.setText("Email Kasir                    :");
+        titleEmailKasir.setText("Email Kasir                   :");
 
-        jLabel11.setText("jLabel6");
+        textEmailKasir.setText("jLabel6");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(195, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel11))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel9))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel8))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel7))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel6))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(titleDataKasir)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(65, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(titleEmailKasir)
+                        .addGap(20, 20, 20)
+                        .addComponent(textEmailKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(titleKontakKasir)
+                                .addGap(18, 18, 18)
+                                .addComponent(textKontakKasir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(titleNamaKasir)
+                                .addGap(18, 18, 18)
+                                .addComponent(textNamaKasir))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(titleNoIdKasir)
+                                .addGap(18, 18, 18)
+                                .addComponent(textNoIdKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(41, 41, 41))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(titleAlamatKasir)
+                        .addGap(20, 20, 20)
+                        .addComponent(textAlamatKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(74, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(titleDataKasir)
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
+                    .addComponent(titleNoIdKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textNoIdKasir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
+                    .addComponent(titleNamaKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textNamaKasir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel8))
-                .addGap(18, 18, 18)
+                    .addComponent(textKontakKasir)
+                    .addComponent(titleKontakKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
+                    .addComponent(titleAlamatKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textAlamatKasir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11))
-                .addContainerGap(93, Short.MAX_VALUE))
+                    .addComponent(titleEmailKasir, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textEmailKasir))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         pack();
@@ -166,16 +204,16 @@ public class WindowDataKasir extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel textAlamatKasir;
+    private javax.swing.JLabel textEmailKasir;
+    private javax.swing.JLabel textKontakKasir;
+    private javax.swing.JLabel textNamaKasir;
+    private javax.swing.JLabel textNoIdKasir;
+    private javax.swing.JLabel titleAlamatKasir;
+    private javax.swing.JLabel titleDataKasir;
+    private javax.swing.JLabel titleEmailKasir;
+    private javax.swing.JLabel titleKontakKasir;
+    private javax.swing.JLabel titleNamaKasir;
+    private javax.swing.JLabel titleNoIdKasir;
     // End of variables declaration//GEN-END:variables
 }
