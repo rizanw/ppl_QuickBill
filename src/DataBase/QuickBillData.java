@@ -178,6 +178,67 @@ public class QuickBillData {
         return false;
     }
     
+    public ResultSet getDataKasir(String NoId){
+        try {
+            String q = "select * from Kasir where NoIdKasir = ?";
+            pstmt = conn.prepareStatement(q);
+            pstmt.setString(1, NoId);
+            rs = pstmt.executeQuery();
+            return rs;
+        } catch (SQLException ex) {
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public ResultSet getDataBarang(String NoId){
+        try {
+            String q = "select * from Barang where NoIdBarang = ?";
+            pstmt = conn.prepareStatement(q);
+            pstmt.setString(1, NoId);
+            rs = pstmt.executeQuery();
+            return rs;
+        } catch (SQLException ex) {
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public ResultSet getDataTransaksi(String NoId){
+        try {
+            String q = "select * from Transaksi where NoTransaksi = ?";
+            pstmt = conn.prepareStatement(q);
+            pstmt.setString(1, NoId);
+            rs = pstmt.executeQuery();
+            return rs;
+        } catch (SQLException ex) {
+            Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public ResultSet getAllDataBarang(){
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select * from Barang");
+            return rs;
+        } catch (SQLException ex) {
+            Logger.getLogger(QuickBillData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public ResultSet getAllDataKasir(){
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select * from Kasir");
+            return rs;
+        } catch (SQLException ex) {
+            Logger.getLogger(QuickBillData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
     public void printAllBarang(){
         try {
             stmt = conn.createStatement();
@@ -194,6 +255,7 @@ public class QuickBillData {
             Logger.getLogger(Connection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
     public void printAllKasir(){
         try {
             stmt = conn.createStatement();

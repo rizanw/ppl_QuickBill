@@ -8,6 +8,9 @@ package quickbill;
 import UserAuthControl.Session;
 import UserAuthControl.WindowLogin;
 import java.awt.FlowLayout;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,7 +23,7 @@ public class WindowQuickBill extends javax.swing.JFrame {
      */
     public WindowQuickBill() {
         initComponents();
-        
+
 //        if("1".equals(role)){
 //            menuCariBarang.setEnabled(true);
 //            menuDaftarBarang.setEnabled(true);
@@ -49,7 +52,6 @@ public class WindowQuickBill extends javax.swing.JFrame {
 //            menuTambahKasir.setEnabled(false);
 //            menuDaftarKasir.setEnabled(false);
 //        }
-        
         mainPanel.setLayout(new FlowLayout());
     }
 
@@ -236,7 +238,7 @@ public class WindowQuickBill extends javax.swing.JFrame {
         mainPanel.removeAll();
         mainPanel.repaint();
         mainPanel.revalidate();
-        
+
         mainPanel.add(titleWelcome);
         mainPanel.repaint();
         mainPanel.validate();
@@ -247,7 +249,7 @@ public class WindowQuickBill extends javax.swing.JFrame {
         mainPanel.removeAll();
         mainPanel.repaint();
         mainPanel.revalidate();
-        
+
         mainPanel.add(new FormDataBarang());
         mainPanel.validate();
     }//GEN-LAST:event_menuTambahDataBarangActionPerformed
@@ -262,9 +264,9 @@ public class WindowQuickBill extends javax.swing.JFrame {
         mainPanel.removeAll();
         mainPanel.repaint();
         mainPanel.revalidate();
-        
+
         mainPanel.add(new FormDataTransaksi());
-        mainPanel.validate();        
+        mainPanel.validate();
     }//GEN-LAST:event_menuTambahTransaksiActionPerformed
 
     private void menuCariTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCariTransaksiActionPerformed
@@ -281,7 +283,7 @@ public class WindowQuickBill extends javax.swing.JFrame {
         mainPanel.removeAll();
         mainPanel.repaint();
         mainPanel.revalidate();
-        
+
         mainPanel.add(new FormDataKasir());
         mainPanel.validate();
     }//GEN-LAST:event_menuTambahKasirActionPerformed
@@ -291,13 +293,19 @@ public class WindowQuickBill extends javax.swing.JFrame {
         mainPanel.removeAll();
         mainPanel.repaint();
         mainPanel.revalidate();
-        
+
         mainPanel.add(new DaftarKasir());
         mainPanel.validate();
     }//GEN-LAST:event_menuDaftarKasirActionPerformed
 
     private void menuDaftarBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDaftarBarangActionPerformed
-        // TODO add your handling code here:
+
+        mainPanel.removeAll();
+        mainPanel.repaint();
+        mainPanel.revalidate();
+
+        mainPanel.add(new DaftarBarang());
+        mainPanel.validate();
     }//GEN-LAST:event_menuDaftarBarangActionPerformed
 
     private void menuCariBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCariBarangActionPerformed

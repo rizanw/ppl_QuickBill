@@ -36,6 +36,7 @@ public class PesanKonfirmasi {
     }
     
     public void peringatanGagalTransaksi(){
-    
+        Component parentComponent = null;
+        JOptionPane.showMessageDialog(parentComponent, "Data Kasir Berhasil Ditambahkan");
     }
 }

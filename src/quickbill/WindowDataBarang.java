@@ -14,8 +14,19 @@ public class WindowDataBarang extends javax.swing.JFrame {
     /**
      * Creates new form WindowDataBarang
      */
-    public WindowDataBarang() {
+    public WindowDataBarang() { 
+        String NoIdBarang = Barang.NoIdBarang;
+        String namaBarang = Barang.namaBarang;
+        int hargaBarang = Barang.hargaBarang;
+        int jumlahBarang = Barang.jumlahBarangTersedia;
+         
         initComponents();
+        
+        labelDataIdBarang.setText(NoIdBarang);
+        labelDataNamaBarang.setText(namaBarang);
+        labelDataHargaBarang.setText(String.valueOf(hargaBarang));
+        labelDataJumlahBarang.setText(String.valueOf(jumlahBarang));
+        
     }
 
     /**
@@ -32,12 +43,13 @@ public class WindowDataBarang extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        labelDataIdBarang = new javax.swing.JLabel();
+        labelDataNamaBarang = new javax.swing.JLabel();
+        labelDataHargaBarang = new javax.swing.JLabel();
+        labelDataJumlahBarang = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Data Barang");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Data Barang");
@@ -50,13 +62,13 @@ public class WindowDataBarang extends javax.swing.JFrame {
 
         jLabel5.setText("Jumlah Barang Tersedia  :");
 
-        jLabel6.setText("jLabel6");
+        labelDataIdBarang.setText("jLabel6");
 
-        jLabel7.setText("jLabel6");
+        labelDataNamaBarang.setText("jLabel6");
 
-        jLabel8.setText("jLabel6");
+        labelDataHargaBarang.setText("jLabel6");
 
-        jLabel9.setText("jLabel6");
+        labelDataJumlahBarang.setText("jLabel6");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,19 +84,19 @@ public class WindowDataBarang extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel9))
+                        .addComponent(labelDataJumlahBarang))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel8))
+                        .addComponent(labelDataHargaBarang))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel7))
+                        .addComponent(labelDataNamaBarang))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel6)))
+                        .addComponent(labelDataIdBarang)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,19 +107,19 @@ public class WindowDataBarang extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel6))
+                    .addComponent(labelDataIdBarang))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel7))
+                    .addComponent(labelDataNamaBarang))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel8))
+                    .addComponent(labelDataHargaBarang))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel9))
+                    .addComponent(labelDataJumlahBarang))
                 .addContainerGap(125, Short.MAX_VALUE))
         );
 
@@ -155,9 +167,9 @@ public class WindowDataBarang extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel labelDataHargaBarang;
+    private javax.swing.JLabel labelDataIdBarang;
+    private javax.swing.JLabel labelDataJumlahBarang;
+    private javax.swing.JLabel labelDataNamaBarang;
     // End of variables declaration//GEN-END:variables
 }
